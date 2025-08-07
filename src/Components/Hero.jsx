@@ -1,3 +1,6 @@
+import { FiMail, FiPlay } from 'react-icons/fi';
+import { BiCheckShield } from 'react-icons/bi';
+
 const Hero = () => {
   return (
     <div className="hero min-h-screen bg-base-100 pt-16">
@@ -5,9 +8,11 @@ const Hero = () => {
         <div className="flex-1 relative">
           <div className="card-glass p-4 relative z-10">
             <div className="mockup-code bg-base-100 text-primary-content">
-              <pre data-prefix="$"><code>npm install twitch-archiver</code></pre>
-              <pre data-prefix=">"><code>Archiving chat from channel...</code></pre>
-              <pre data-prefix=">" className="text-success"><code>Successfully archived 2.5K messages!</code></pre>
+              <pre data-prefix=">"><code>Validating email addresses...</code></pre>
+              <pre data-prefix=">" className="text-success"><code>✓ john.doe@company.com - Valid</code></pre>
+              <pre data-prefix=">" className="text-error"><code>✗ invalid.email@ - Invalid format</code></pre>
+              <pre data-prefix=">" className="text-warning"><code>! temp@disposable.com - Disposable</code></pre>
+              <pre data-prefix=">" className="text-success"><code>Validation complete! View detailed report</code></pre>
             </div>
           </div>
           <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-r from-primary to-info opacity-10 rounded-xl"></div>
@@ -15,37 +20,38 @@ const Hero = () => {
         
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-5xl font-bold mb-8 heading-gradient">
-            Never Lose Your Stream's Chat History Again
+            Professional Email Validation Made Simple
           </h1>
           <p className="py-6 text-lg text-gray-300">
-            Automatically archive and analyze your Twitch chat data. Transform chat logs into valuable insights with our powerful search and export features.
+            Ensure your email lists are clean, valid, and ready for business. Our advanced validation service helps you maintain high deliverability rates and protect your sender reputation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button className="btn btn-primary">
-              Start Archiving
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              Start Validating
+              <FiMail className="w-5 h-5 ml-2" />
             </button>
             <button className="btn btn-outline btn-accent">
-              Watch Demo
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+              See How It Works
+              <FiPlay className="w-5 h-5 ml-2" />
             </button>
           </div>
           <div className="mt-8 flex items-center justify-center lg:justify-start gap-8">
             <div className="stats bg-base-200 shadow">
               <div className="stat">
-                <div className="stat-title">Active Users</div>
-                <div className="stat-value text-primary">10K+</div>
+                <div className="stat-title">Emails Validated</div>
+                <div className="stat-value text-primary">1M+</div>
+                <div className="stat-desc">Last 30 days</div>
               </div>
               <div className="stat">
-                <div className="stat-title">Messages Archived</div>
-                <div className="stat-value text-secondary">25M+</div>
+                <div className="stat-title">Accuracy Rate</div>
+                <div className="stat-value text-secondary">99.9%</div>
+                <div className="stat-desc">Verified Results</div>
               </div>
             </div>
+          </div>
+          <div className="mt-8 flex items-center justify-center lg:justify-start text-sm text-gray-400">
+            <BiCheckShield className="w-5 h-5 mr-2" />
+            <span>Enterprise-grade security & GDPR compliant</span>
           </div>
         </div>
       </div>
