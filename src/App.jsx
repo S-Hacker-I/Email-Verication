@@ -3,7 +3,7 @@ import Dashboard from './Pages/Dashboard';
 import LandPage from './Pages/LandPage';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './context/authcontext';
 import ProtectedRoute from './Components/protectedroute';
 import UnprotectedRoute from './Components/UnprotectedRoute';
 
