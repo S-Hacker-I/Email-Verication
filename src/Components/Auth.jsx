@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FiMail, FiLock, FiLoader } from 'react-icons/fi';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/authcontext';
 
 const Auth = ({ mode = 'signin' }) => {
   const [email, setEmail] = useState('');

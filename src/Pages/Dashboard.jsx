@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/authcontext';
 import Main from '../Components/Main';
 import { FiLogOut } from 'react-icons/fi';
 
