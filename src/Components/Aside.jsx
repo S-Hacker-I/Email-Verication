@@ -1,16 +1,8 @@
 import { Link } from 'react-router-dom';
-import {
-  SignedIn,
-  UserButton,
-  useUser,
-  useClerk,
-} from "@clerk/clerk-react";
 import { RiDashboardLine, RiHistoryLine } from 'react-icons/ri';
 import { BiMenuAltLeft } from 'react-icons/bi';
 
 const Aside = ({ setActiveTab, isSidebarOpen, setIsSidebarOpen }) => {
-  const { user } = useUser();
-  const { signOut } = useClerk();
 
   const navItems = [
     { id: 'Newconect', label: 'Dashboard', icon: RiDashboardLine },
@@ -62,31 +54,7 @@ const Aside = ({ setActiveTab, isSidebarOpen, setIsSidebarOpen }) => {
           </nav>
 
           {/* User Profile & Logout */}
-          <SignedIn>
-            <div className="card bg-base-100/50 backdrop-blur p-4 border border-base-content/10">
-              <div className="flex items-center gap-4">
-                <div className="avatar ring-2 ring-primary/20 rounded-full p-0.5">
-                  <div className="w-12 h-12 rounded-full">
-                    <UserButton />
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="font-medium truncate">
-                    {user?.firstName || 'User'} {user?.lastName || ''}
-                  </div>
-                  <div className="text-sm text-base-content/60 truncate">
-                    {user?.publicMetadata?.plan || 'Free Plan'}
-                  </div>
-                </div>
-              </div>
-              <button 
-                onClick={() => signOut()} 
-                className="btn btn-primary mt-4 w-full bg-gradient-to-r from-primary to-primary-focus hover:opacity-90 transition-opacity"
-              >
-                Logout
-              </button>
-            </div>
-          </SignedIn>
+          
         </div>
       </aside>
     </>

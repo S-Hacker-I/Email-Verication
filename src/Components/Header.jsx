@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
-import { FiCheck, FiMenu, FiZap } from 'react-icons/fi';
+import { FiCheck, FiMenu, FiZap, FiLogIn, FiUserPlus } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { useAuth } from '../context/AuthContext';
 
 const Header = () => {
+  const { user } = useAuth();
   const menuVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 }
@@ -37,6 +38,21 @@ const Header = () => {
             <li>
               <Link to="/docs" className="hover:bg-primary/10 transition-all duration-300">API Docs</Link>
             </li>
+            {!user && (
+              <>
+                <div className="divider my-1"></div>
+                <li>
+                  <Link to="/signin" className="hover:bg-primary/10 transition-all duration-300">
+                    <FiLogIn className="h-4 w-4" /> Sign In
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/signup" className="hover:bg-primary/10 transition-all duration-300">
+                    <FiUserPlus className="h-4 w-4" /> Sign Up
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl font-bold flex items-center gap-2 group">
@@ -60,43 +76,16 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end gap-2">
-        <SignedOut>
-          <Link 
-            to="/features" 
-            className="btn btn-ghost btn-sm hidden sm:flex group"
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary group-hover:scale-105 transition-transform">
-              View Demo
-            </span>
-          </Link>
-          <SignInButton mode="modal">
-            <button className="btn btn-primary btn-sm group relative overflow-hidden">
-              <span className="relative z-10 flex items-center">
-                Start Free
-                <FiZap className="h-4 w-4 ml-1 group-hover:rotate-12 transition-transform duration-300" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-          </SignInButton>
-        </SignedOut>
-        <SignedIn>
-          <Link 
-            to="/dashboard" 
-            className="btn btn-ghost btn-sm group"
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary group-hover:scale-105 transition-transform">
-              Dashboard
-            </span>
-          </Link>
-          <UserButton 
-            afterSignOutUrl="/" 
-            appearance={{
-              elements: {
-                avatarBox: "hover:scale-105 transition-transform duration-300"
-              }
-            }}
-          />
-        </SignedIn>
+        {!user && (
+          <>
+            <Link to="/signin" className="btn btn-ghost btn-sm hidden lg:flex items-center gap-2">
+              <FiLogIn className="h-4 w-4" /> Sign In
+            </Link>
+            <Link to="/signup" className="btn btn-primary btn-sm hidden lg:flex items-center gap-2">
+              <FiUserPlus className="h-4 w-4" /> Sign Up
+            </Link>
+          </>
+        )}
       </div>
     </motion.div>
   );

@@ -1,7 +1,11 @@
-import { FiMail, FiPlay, FiZap } from 'react-icons/fi';
+import { FiMail, FiPlay, FiZap, FiUserPlus } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const Hero = () => {
+  const { user } = useAuth();
+
   return (
     <div className="hero min-h-screen bg-base-100 pt-16 overflow-hidden">
       <div className="hero-content flex-col lg:flex-row-reverse gap-12 max-w-7xl mx-auto px-4">
@@ -40,27 +44,37 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-            Protect your sender reputation and maximize deliverability with our advanced email validation service. Real-time verification, bulk processing, and detailed quality scoring.
+            Protect your sender reputation and maximize deliverability with our advanced email validation service. Start with 25 free verifications per month, no credit card required.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <motion.button 
-              className="btn btn-primary btn-lg group"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Start Validating Free
-              <FiMail className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
-            </motion.button>
+            {!user ? (
+              <Link 
+                to="/signup"
+                className="btn btn-primary btn-lg group"
+              >
+                Get Started Free
+                <FiUserPlus className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
+              </Link>
+            ) : (
+              <Link 
+                to="/dashboard"
+                className="btn btn-primary btn-lg group"
+              >
+                Go to Dashboard
+                <FiMail className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
+              </Link>
+            )}
             
-            <motion.button 
+            <a 
+              href="https://www.youtube.com/watch?v=demo"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-outline btn-lg group"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
             >
               Watch Demo
               <FiPlay className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </a>
           </div>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-8 text-center lg:text-left">
@@ -69,11 +83,11 @@ const Hero = () => {
               <div className="text-sm text-gray-400">Validation Accuracy</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-secondary">0.2s</div>
+              <div className="text-3xl font-bold text-secondary">0.1s</div>
               <div className="text-sm text-gray-400">Response Time</div>
             </div>
             <div className="space-y-2 col-span-2 md:col-span-1">
-              <div className="text-3xl font-bold text-accent">5,000+</div>
+              <div className="text-3xl font-bold text-accent">10,000+</div>
               <div className="text-sm text-gray-400">Active Users</div>
             </div>
           </div>

@@ -1,7 +1,11 @@
-import { FiArrowRight, FiCheck, FiMail, FiShield, FiZap } from 'react-icons/fi';
+import { FiArrowRight, FiCheck, FiMail, FiShield, FiZap, FiUserPlus } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const CTA = () => {
+  const { user } = useAuth();
+
   return (
     <div className="py-24 bg-base-100 relative overflow-hidden">
       {/* Background decoration */}
@@ -37,7 +41,7 @@ const CTA = () => {
               
               <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
                 Join thousands of businesses who trust our enterprise-grade email validation service.
-                Start with 5,000 free credits, no credit card required.
+                Start with 25 free verifications per month, no credit card required.
               </p>
             </motion.div>
 
@@ -48,14 +52,21 @@ const CTA = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <button className="btn btn-primary btn-lg group px-8">
-                Start Free Trial
-                <FiMail className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
-              </button>
-              <button className="btn btn-outline btn-lg group px-8">
-                Schedule Demo
-                <FiArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+              {!user ? (
+                <Link to="/signup" className="btn btn-primary btn-lg group px-8">
+                  Get Started Free
+                  <FiUserPlus className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
+                </Link>
+              ) : (
+                <Link to="/dashboard" className="btn btn-primary btn-lg group px-8">
+                  Go to Dashboard
+                  <FiArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              )}
+              <a href="mailto:contact@waafi.pro" className="btn btn-outline btn-lg group px-8">
+                Contact Sales
+                <FiMail className="w-5 h-5 ml-2 group-hover:translate-y-[-2px] transition-transform" />
+              </a>
             </motion.div>
 
             <motion.div 
@@ -67,7 +78,7 @@ const CTA = () => {
             >
               <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-base-200/50">
                 <FiCheck className="w-5 h-5 text-success" />
-                <span>5,000 Free Credits</span>
+                <span>25 Free Verifications/Month</span>
               </div>
               <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-base-200/50">
                 <FiCheck className="w-5 h-5 text-success" />
