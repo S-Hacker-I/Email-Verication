@@ -1,7 +1,7 @@
 import { FiArrowRight, FiCheck, FiMail, FiShield, FiZap, FiUserPlus } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/authcontext';
 
 const CTA = () => {
   const { user } = useAuth();
