@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/authcontext';
 import supabase from '../utils/supabase';
 
 const MONTHLY_LIMIT = 25;
