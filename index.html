@@ -3,36 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Improved Favicon Configuration -->
+
+    <!-- Favicons & PWA -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    
-    <!-- Primary Meta Tags - Enhanced -->
+
+    <!-- Primary Meta Tags -->
     <title>Waafi.pro | Professional Email Validation & Verification Service</title>
     <meta name="description" content="Real-time email validation API. Verify emails instantly, improve deliverability by 98%, clean lists & protect sender reputation. Get 25 free verifications!">
     <meta name="keywords" content="email validation, email verification, email checker, email deliverability, email API, bulk email validation, email list cleaner, spam trap detection, mailbox verification">
     <meta name="author" content="Waafi.pro">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="2 days">
     <link rel="canonical" href="https://waafi.pro/">
-    
-    <!-- Open Graph / Facebook - Enhanced -->
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://waafi.pro/">
     <meta property="og:title" content="Waafi.pro | Enterprise Email Validation API">
     <meta property="og:description" content="Instant email verification service with 99% accuracy. Clean email lists, verify deliverability & prevent spam traps.">
-    <meta property="og:image" content="https://waafi.pro/hero-image.webp">
+    <meta property="og:image" content="https://waafi.pro/og-image.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Waafi.pro Email Validation Dashboard">
-    
-    <!-- Twitter - Enhanced -->
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@waafipro">
     <meta name="twitter:creator" content="@waafipro">
@@ -40,7 +38,7 @@
     <meta name="twitter:description" content="Validate emails instantly with our enterprise-grade API. Free tier available with 25 credits.">
     <meta name="twitter:image" content="https://waafi.pro/twitter-card.webp">
     <meta name="twitter:image:alt" content="Email Validation API Interface">
-    
+
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -58,7 +56,6 @@
       "description": "Enterprise email validation and verification service"
     }
     </script>
-    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -76,15 +73,21 @@
       }
     }
     </script>
-    
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://api.waafi.pro" crossorigin>
+    <link rel="dns-prefetch" href="https://api.waafi.pro">
+
     <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="df30578c-e7d7-40e3-a7eb-8a1cf027dd2f"></script>
+
+    <!-- Optional: Add Lighthouse PWA Hint -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    
-    <!-- Preconnect for API -->
-    <link rel="preconnect" href="https://api.waafi.pro" crossorigin>
   </body>
 </html>

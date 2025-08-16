@@ -6,6 +6,8 @@ import SignUp from './Pages/SignUp';
 import { AuthProvider } from './context/authcontext';
 import ProtectedRoute from './Components/protectedroute';
 import UnprotectedRoute from './Components/UnprotectedRoute';
+import NotFound from './Pages/NotFound';
+
 
 function App() {
   return (
@@ -35,6 +37,13 @@ function App() {
               <ProtectedRoute>
                 <Dashboard />
               </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/*"
+            element={
+                <NotFound />
+
             }
           />
         </Routes>
