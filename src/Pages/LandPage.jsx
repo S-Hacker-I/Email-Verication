@@ -4,6 +4,7 @@ import Hero from '../Components/Hero'
 import Features from '../Components/Features'
 import CTA from '../Components/CTA'
 import Footer from '../Components/Footer'
+import PricingSection from '../Components/PricingSection'
 
 const LandPage = () => {
   return (
@@ -12,6 +13,7 @@ const LandPage = () => {
       <main className="pt-16">
         <Hero />
         <Features />
+        <PricingSection />
         <CTA />
       </main>
       <Footer />

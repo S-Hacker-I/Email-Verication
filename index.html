@@ -1,85 +1,90 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" media="(prefers-color-scheme: dark)" />
-  <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-
-  <!-- Primary SEO -->
-  <title>Email Validation & Verification API | Waafi.pro</title>
-  <meta name="title" content="Email Validation & Verification API | Waafi.pro">
-  <meta name="description" content="Waafi.pro is a professional email validation and verification service with a real-time API. Improve email deliverability, reduce bounce rates, and protect your sender reputation with accurate results. Start with 25 free verifications.">
-  <meta name="keywords" content="email validation API, email verification service, verify email address, bulk email checker, real-time email validation, email list cleaning, deliverability tools, email verification API">
-  <meta name="author" content="Waafi.pro">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="language" content="English">
-  <link rel="canonical" href="https://waafi.pro/" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://waafi.pro/">
-  <meta property="og:title" content="Waafi.pro - Email Validation & Verification API">
-  <meta property="og:description" content="Professional email validation and verification API. Improve deliverability, reduce bounces, and verify emails instantly. Get 25 free checks today.">
-  <meta property="og:image" content="https://waafi.pro/hero-image.svg">
-  <meta property="og:image:alt" content="Waafi.pro Email Validation Service">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@waafipro">
-  <meta name="twitter:creator" content="@waafipro">
-  <meta name="twitter:url" content="https://waafi.pro/">
-  <meta name="twitter:title" content="Waafi.pro - Email Validation & Verification API">
-  <meta name="twitter:description" content="Professional email validation API. Verify emails instantly, reduce bounces, and protect your sender reputation.">
-  <meta name="twitter:image" content="https://waafi.pro/hero-image.svg">
-  <meta name="twitter:image:alt" content="Waafi.pro Email Validation Service">
-
-  <!-- Structured Data (JSON-LD for SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Waafi.pro",
-    "url": "https://waafi.pro/",
-    "description": "Enterprise-grade email validation service with real-time API. Improve email deliverability, reduce bounce rates, and protect your sending reputation.",
-    "applicationCategory": "WebApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0.00",
-      "priceCurrency": "USD",
-      "description": "Start with 25 free email verifications"
-    },
-    "creator": {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Improved Favicon Configuration -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    
+    <!-- Primary Meta Tags - Enhanced -->
+    <title>Waafi.pro | Professional Email Validation & Verification Service</title>
+    <meta name="description" content="Real-time email validation API. Verify emails instantly, improve deliverability by 98%, clean lists & protect sender reputation. Get 25 free verifications!">
+    <meta name="keywords" content="email validation, email verification, email checker, email deliverability, email API, bulk email validation, email list cleaner, spam trap detection, mailbox verification">
+    <meta name="author" content="Waafi.pro">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="2 days">
+    <link rel="canonical" href="https://waafi.pro/">
+    
+    <!-- Open Graph / Facebook - Enhanced -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://waafi.pro/">
+    <meta property="og:title" content="Waafi.pro | Enterprise Email Validation API">
+    <meta property="og:description" content="Instant email verification service with 99% accuracy. Clean email lists, verify deliverability & prevent spam traps.">
+    <meta property="og:image" content="https://waafi.pro/hero-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Waafi.pro Email Validation Dashboard">
+    
+    <!-- Twitter - Enhanced -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@waafipro">
+    <meta name="twitter:creator" content="@waafipro">
+    <meta name="twitter:title" content="Real-time Email Verification API | Waafi.pro">
+    <meta name="twitter:description" content="Validate emails instantly with our enterprise-grade API. Free tier available with 25 credits.">
+    <meta name="twitter:image" content="https://waafi.pro/twitter-card.webp">
+    <meta name="twitter:image:alt" content="Email Validation API Interface">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Waafi.pro",
-      "url": "https://waafi.pro/"
+      "url": "https://waafi.pro/",
+      "logo": "https://waafi.pro/logo.svg",
+      "sameAs": ["https://twitter.com/waafipro"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@waafi.pro",
+        "contactType": "Customer Support"
+      },
+      "description": "Enterprise email validation and verification service"
     }
-  }
-  </script>
-
-  <!-- Analytics -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="df30578c-e7d7-40e3-a7eb-8a1cf027dd2f"></script>
-</head>
-<body>
-  <header>
-    <h1>Email Validation & Verification API - Waafi.pro</h1>
-  </header>
-
-  <main id="root"></main>
-
-  <footer>
-    <p>&copy; <span id="year"></span> Waafi.pro. All rights reserved.</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Email Validation API",
+      "image": "https://waafi.pro/hero-image.webp",
+      "description": "Real-time email verification service with bulk processing capabilities",
+      "brand": "Waafi.pro",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "description": "25 free email verifications"
+      }
+    }
+    </script>
+    
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="df30578c-e7d7-40e3-a7eb-8a1cf027dd2f"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Preconnect for API -->
+    <link rel="preconnect" href="https://api.waafi.pro" crossorigin>
+  </body>
 </html>
